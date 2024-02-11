@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-service
+spec:
+  type: NodePort # Use NodePort or LoadBalancer for external access
+  selector:
+    app: angular-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080 # Assuming your Angular app is running on port 80
+    nodePort: 31000
